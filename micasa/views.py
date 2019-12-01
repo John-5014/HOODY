@@ -71,3 +71,41 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request,'search.html',{"message":message})
+
+# views for profile
+
+@login_required(login_url='/accounts/login/')
+def profile(request, username):
+
+    profile = User.objects.get(username=username)
+    print(profile.id)
+    try:
+        profile_details = Profile.get_by_id(profile.id)
+    except:
+        profile_details = Profile.filter_by_id(profile.id)
+    user = request.user
+    profile = User.objects.get(username=username)
+    title = f'@{profile.username} '
+
+    return render(request, 'profile.html', locals())
+
+@login_required(login_url='/accounts/login/')
+def edit(request):
+    current_user = request.user
+    user = Profile.objects.get(user=current_user)
+    profile = User.objects.get(username=request.user)
+
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            edit = form.save(commit=False)
+            edit.user = request.user
+            edit.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm(instance=user)
+    return render(request, 'edit_profile.html', locals())
+
+
+
