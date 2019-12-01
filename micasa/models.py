@@ -102,6 +102,54 @@ class Profile(models.Model):
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
 
+class Business(models.Model):
+    business_name = models.CharField(max_length=50)
+    owner = models.ForeignKey(User)
+    hood = models.ForeignKey(Hood)
+    address = models.CharField(max_length=50)
+    category = models.ForeignKey(Category)
+
+    def __str__(self):
+        return self.business_name
+
+    def create_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
+
+    @classmethod
+    def search_by_category(cls, category):
+        biz = cls.objects.filter(category__name__icontains=category)
+        return biz
+
+    @classmethod
+    def search_business(cls, search_term):
+        business = Business.objects.filter(business_name__icontains=search_term)
+        return business
+
+
+    @classmethod
+    def get_business(cls, id):
+        business = Business.objects.filter(hood__pk=id)
+        return business
+
+
+
+class Post(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    description = models.TextField(max_length=300)
+    hood = models.ForeignKey(Hood, blank=True, on_delete=models.CASCADE)
+    title = models.CharField(max_length=65)
+
+    def __str__(self):
+        return self.title
+
+    @classmethod
+    def get_post(cls, id):
+        post = Post.objects.filter(hood__pk=id)
+        return post
+
 
 
 
