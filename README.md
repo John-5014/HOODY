@@ -48,7 +48,7 @@ A web application that allows users to be in the loop about everything happening
 None known at the moment.
 
 ## Support and contact details
-In case of clarification email me at kaiserjohn52@.nm@gmail.com
+In case of clarification email me at kaiserjohn52@gmail.com
 
 ### License
 Copyright (c) 2019 **JOHN KARANJA N**
