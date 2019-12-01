@@ -129,6 +129,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
+UPLOADCARE = {
+'pub_key': 'd7f9cc3e23e27250634c',
+'secret': '63eafddf270355e8cefb',
+}
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
