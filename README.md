@@ -36,7 +36,7 @@ A web application that allows users to be in the loop about everything happening
 * Javascript 
 
 ## Application link
- Find live site here: |||||||
+ Find live site here: https://mahood1.herokuapp.com/
 
 ## Prerequisites
 * Python 3.6.8 
