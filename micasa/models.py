@@ -108,6 +108,7 @@ class Business(models.Model):
     hood = models.ForeignKey(Hood)
     address = models.CharField(max_length=50)
     category = models.ForeignKey(Category)
+    
 
     def __str__(self):
         return self.business_name

@@ -83,11 +83,12 @@ def profile(request, username):
         profile_details = Profile.get_by_id(profile.id)
     except:
         profile_details = Profile.filter_by_id(profile.id)
-    user = request.user
-    profile = User.objects.get(username=username)
-    title = f'@{profile.username} '
 
-    return render(request, 'profile.html', locals())
+        user = request.user
+        profile = User.objects.get(username=username)
+        title = f'@{profile.username} '
+    
+        return render(request, 'profile.html', locals())
 
 @login_required(login_url='/accounts/login/')
 def edit(request):

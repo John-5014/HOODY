@@ -27,25 +27,27 @@
     </div>
     <div class="w3-display-bottomright">
           <p>
-            <a class="info w3-btn w3-round-xxlarge w3-pink w3-text-white w3-margin-right" href="{% url 'leave' hood_id=hood.id %}">Back to home page</a>
+            <a class="info w3-btn w3-round-xxlarge w3-orange w3-text-white w3-margin-right" href="{% url 'leave' hood_id=hood.id %}">Back to home page</a>
         </p>
 
     </div>
     <div class="w3-display-bottomleft">
-                <p><a class="info w3-btn w3-round-xxlarge w3-pink w3-text-white w3-margin-left" href="{% url 'upload_business' %}">Add Business</a></p>
+                <p><a class="info w3-btn w3-round-xxlarge w3-orange w3-text-white w3-margin-left" href="{% url 'upload_business' %}">Add Business</a></p>
 
     </div>
 
 
 </div>
+<hr>
 
-<div class="w3-container">
+<div class="w3-container wetu">
     <br>
     <div class="w3-row">
         <div class=" w3-padding w3-center">
-            <a href="/upload_business"><i class="fas fa-briefcase fa-2x w3-center w3-text-pink"></i>
+            <a href="/upload_business">
 
-                <h3><strong>Businesses</strong></h3></a>
+                <h3><span><i class="fas fa-upload fa-1x w3-center w3-text-money"></i></span><strong style="color:yellow;">Include Your Businesses</strong><span><i class="fas fa-money fa-1x w3-center w3-text-green"></i></span> </h3></a>
+                <p style="color:white;">Your Uploaded business will appear here</p>
             <hr>
 
         </div>
@@ -53,17 +55,17 @@
 
         <table class="w3-table w3-bordered">
             <tr>
-                <th>Business Name</th>
-                <th>Email address</th>
-                <th>Category</th>
-                <th>Owner</th>
+                <th style="color:white; font-size: 23px;">Business Name</th>
+                <th style="color:white; font-size: 23px;">Email address</th>
+                <th style="color:white; font-size: 23px;">Category</th>
+                <th style="color:white; font-size: 23px;">Owner</th>
             </tr>
             {% for biz in businesses%}
             <tr>
-                <td>{{biz.business_name}}</td>
-                <td>{{biz.address}}</td>
-                <td>{{biz.category}}</td>
-                <td>{{biz.owner.username}}</td>
+                <td style="color:orangered; font-size: 19px; font-weight: bold;">{{biz.business_name}}</td>
+                <td style="color:orangered; font-size: 19px; font-weight: bold;">{{biz.address}}</td>
+                <td style="color:orangered; font-size: 19px; font-weight: bold;">{{biz.category}}</td>
+                <td style="color:orangered; font-size: 19px; font-weight: bold;">{{biz.owner.username}}</td>
             </tr>
             {% endfor %}
         </table>
@@ -71,8 +73,8 @@
     <br>
     <div class="w3-row">
         <div class=" w3-padding w3-center">
-            <a href="/post"><i class="fas fa-pen-square fa-2x w3-center w3-text-pink"></i>
-                <h3 > <strong>Hot Posts</strong></h3></a>
+            <a href="/post"><i class="fas fa-pen-square fa-2x w3-center w3-text-red">ADD POST</i>
+                <h3 > <img src="{% static 'images/firegif.gif'%}" alt="" style="height:auto; width:50px; border-radius: 20px;"> <strong style="color:white;">Posts</strong></h3></a>
             <hr>
 
 
@@ -86,7 +88,7 @@
             <div class="w3-card-2 w3-center " >
 
                 <header class="w3-container w3-serif ">
-                    <h3>{{post.title}}!!</h3>
+                    <h3 style="color:white;">{{post.title}}!!</h3>
                     <hr>
 
                 </header>
@@ -119,13 +121,13 @@
             <div class="w3-row w3-center">
                 <br>
                 <div class="w3-col l6 m6 s12">
-                    <i class="far fa-hospital fa-2x w3-text-red"></i>
+                        <img src="{% static 'images/giphy.gif'%}" alt="" style="height:auto; width:80px; border-radius: 20px;">
                     <br>
                     
 
-                    <h3> <i class="fa fa-ambulance" aria-hidden="true"></i>Health Care Department</h3>
+                    <h3 style="color:white;" >Health Care Department</h3>
                     <div class="w3-card-4 w3-white w3-padding w3-margin ">
-                        <header><h4><strong>Contact Information</strong></h4>
+                        <header><h4 style="color:white;"><strong>Contact Information</strong></h4>
                             <hr>
                         </header>
                         <div class="w3-container w3-margin">
@@ -134,7 +136,7 @@
                             <hr>
                             <p><i class="fas fa-map-marker-alt"></i> {{hood.name}} Main Road</p>
                             <hr>
-                            <p><i class="fas fa-phone"></i>Help Line: 07111222333</p>
+                            <p><i class="fas fa-phone"></i>Help Line: 0717930447</p>
                             <hr>
                         </div>
 
@@ -144,9 +146,9 @@
                 </div>
 
                 <div class="w3-col l6 m6 s12 ">
-                    <i class="fas fa-shield-alt fa-2x w3-text-pink"></i>
+                   <img src="{%static 'images/shield-gif-8.gif'%}" alt="" style="height:auto; width:80px; border-radius: 20px;">
                     <br>
-                    <h3>Police Department</h3>
+                    <h3 style="color:white;">Authorities</h3>
                         <div class="w3-card-4 w3-white w3-padding w3-margin ">
                         <header><h4><strong>Contact Information</strong></h4>
                             <hr>

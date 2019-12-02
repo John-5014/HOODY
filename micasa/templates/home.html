@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static%} {% block content %}
 <div class="w3-display-container bgimg-1 " id="home">
   <div class="w3-display-middle w3-center">
-    <h3 class="w3-text-white">Search for Neighborhood</h3>
+    <h3 class="w3-text-white awesome">Find a Neighborhood</h3>
 
     <form
       class="navbar-form "
@@ -35,12 +35,14 @@
     {% else %}
   </div>
 </div>
+<hr>
 
 <div class="w3-container" id="rexy">
+  <h4 class="text-center" id="beats"> <button  style="color: #fb6d11; font-size:20px;">HOODS</button> </h4>
   <div class="w3-row" style="opacity:0.8.1;">
     <h2 class="w3-center"></h2>
     {% for hood in hoods %}
-    <div class="w3-col l4 m6 s12 w3-padding">
+    <div class="w3-col l4 m6 s12 w3-padding" >
       <div
         class="w3-card-4 w3-white"
         style="padding-bottom:5px;padding-top:3px;"

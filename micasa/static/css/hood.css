@@ -120,3 +120,114 @@ button:hover .textIn3
   background-size: cover;
 }
 
+/* hood syles */
+ .wetu{
+   background-image: url('https://images.pexels.com/photos/2132891/pexels-photo-2132891.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ #beats {
+  animation: heartbeat 3s infinite;
+  padding: 1%;
+}
+
+@keyframes heartbeat {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-55px);
+  }
+  60% {
+    transform: translateY(-45px);
+  }
+}
+
+
+.center {
+      
+  margin: 0 auto;
+  
+}
+
+.awesome {
+  
+  font-family: futura;
+  font-style: italic;
+  
+  width:100%;
+  
+  margin-top:-8%;
+  text-align: center;
+  
+  color:#313131;
+  font-size:45px;
+  font-weight: bold;
+  position: absolute;
+  -webkit-animation:colorchange 20s infinite alternate;
+  
+  
+}
+
+@-webkit-keyframes colorchange {
+  0% {
+    
+    color: blue;
+  }
+  
+  10% {
+    
+    color: #8e44ad;
+  }
+  
+  20% {
+    
+    color: #1abc9c;
+  }
+  
+  30% {
+    
+    color: #d35400;
+  }
+  
+  40% {
+    
+    color: blue;
+  }
+  
+  50% {
+    
+    color: #34495e;
+  }
+  
+  60% {
+    
+    color: blue;
+  }
+  
+  70% {
+    
+    color: #2980b9;
+  }
+  80% {
+ 
+    color: #f1c40f;
+  }
+  
+  90% {
+ 
+    color: #2980b9;
+  }
+  
+  100% {
+    
+    color: pink;
+  }
+}
